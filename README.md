@@ -1,5 +1,15 @@
 # TDOpenStage
 
+## Estado del componente
+
+Este es un componente en desarrollo. Por ahora lo serviré desde Google Drive y tendrá integrado en el .zip una 
+versión de Open Stage Control para facilitar el uso inmediato, pero sobre todo, para ilustrar cómo incluir dentro 
+de un proyecto de TouchDesigner una dependencia externa.
+
+Insisto, esto será temporal hasta que aparezca definitivamente en este repositorio. 
+[Aquí](https://drive.google.com/file/d/12WXIoLE-C2LqLeh4CimnBQ-0jDjMfmyp/view?usp=sharing) está el proyect/componente.
+
+
 ## Configuración del servidor open stage control
 
 En este componente se lanza el servidor de open stage control. En la documentación oficial se pueden consultar los parámetros que requiere el servidor al momento 
