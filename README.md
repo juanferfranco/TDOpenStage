@@ -15,11 +15,15 @@ Insisto, esto será temporal hasta que aparezca definitivamente en este reposito
 En este componente se lanza el servidor de open stage control. En la documentación oficial se pueden consultar los parámetros que requiere el servidor al momento 
 de lanzarlo desde la terminal: [Configuración del servidor](https://openstagecontrol.ammd.net/docs/getting-started/server-configuration/)
 
-<img width="665" height="349" alt="image" src="https://github.com/user-attachments/assets/9ecff103-bf52-4e25-b56a-1eba2f13c277" />
+<img width="710" height="497" alt="image" src="https://github.com/user-attachments/assets/f2234dda-6899-4855-87ce-05be21c5f020" />
 
-En ShowControlIn hay un DAT asociado al parámetro Launchopenstage:
+El puerto 9000 corresponde al **send** que tu configuras en launcher de Open Stage Control cuando haces pruebas. En este puerto debe estar 
+escuchando TouchDesigner, u otro software. En puerto 9001 corresponde al parámetro **osc-port**. Este será el puerto al que TouchDesigner 
+deberá enviar mensajes OSC de regreso.
 
-<img width="857" height="436" alt="image" src="https://github.com/user-attachments/assets/cb905534-4bc0-4188-a094-658ebac4c5f5" />
+Cuando presiones Launch OpenStage Control se activará un **Paramenter Execute** en **OpenStageControlInOut**
+
+<img width="998" height="471" alt="image" src="https://github.com/user-attachments/assets/5953b694-6931-4b47-b2f3-142a1cd9a055" />
 
 Esta es la función asociada al evento de Pulse:
 
@@ -62,9 +66,11 @@ def onPulse(par: Par):
 
 ## Bind de parámetros
 
-Nótese en la imagen que hay un Bind de los parámetros que llegan del cliente de Open Stage Control y la UI del Base Visuals del propio Touch.
+En el Base Visuals hay un Bind que está configurado internamente 
 
-<img width="1677" height="703" alt="image" src="https://github.com/user-attachments/assets/6410235b-2b34-4ec4-9d58-2013364be331" />
+<img width="641" height="418" alt="image" src="https://github.com/user-attachments/assets/45c554fd-fb8c-4917-8c6c-7823dcee82e3" />
+
+<img width="992" height="397" alt="image" src="https://github.com/user-attachments/assets/c1d257d2-e976-4ba0-bda7-25f9c6acff5e" />
 
 ¿Qué es y para que sirve ese Bind?
 
@@ -73,6 +79,19 @@ Revisar esta [documentación oficial](https://docs.derivative.ca/Bind_CHOP).
 ## ¿Cómo hacer el bind hacia open stage control?
 
 Aquí el reto es que al controlar un parámetro en TD también se actualice la interfaz de usuario del cliente de Open Stage Control.
+
+La clave está en esta parte de la red:
+
+<img width="966" height="298" alt="image" src="https://github.com/user-attachments/assets/0cbcc8d1-47d6-479d-84c5-10dff1dbfd49" />
+
+Cada que cambia un parámetro en el Base Visuals **parexec1** se ejecuta y lo informa usando como un out DAT. Esta tabla ingresa a 
+**OpenStageControlInOut**:
+
+<img width="934" height="562" alt="image" src="https://github.com/user-attachments/assets/866bbaf2-b563-421d-a814-c9888c29e565" />
+
+**datexec1** determinará si es necesario o no reenviar a Open Stage Control. Esto solo lo hará si los datos cambian desde TouchDesigner.  
+Si los datos vienen de Open Stage Control, los parámetros de Visual cambiarán, pero **datexec1** no lo reportará.
+
 
 
 
