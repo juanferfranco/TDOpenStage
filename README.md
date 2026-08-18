@@ -7,8 +7,19 @@ versión de Open Stage Control para facilitar el uso inmediato, pero sobre todo,
 de un proyecto de TouchDesigner una dependencia externa.
 
 Insisto, esto será temporal hasta que aparezca definitivamente en este repositorio. 
-[Aquí](https://drive.google.com/file/d/12WXIoLE-C2LqLeh4CimnBQ-0jDjMfmyp/view?usp=sharing) está el proyect/componente.
+[Aquí](https://drive.google.com/file/d/1C5Pk3WIZAVRs5u5urrUT78aCNRlCzj8w/view?usp=sharing) está el proyecto completo + OpenStageControl
 
+[Esta](https://drive.google.com/file/d/1EDZFiYInyt8-JqpTLIPPsMMgvSnzFYsa/view?usp=sharing) otra versión tiene solo el proyecto de TouchDesigner y la UI de los clientes.
+
+<img width="213" height="272" alt="image" src="https://github.com/user-attachments/assets/891d83b3-f183-44f3-a0ed-2c2e5dfbd938" />
+
+Para que funcione debes descargar OpenStageControl y guardar todos estos archivos en la carpeta **OpenStageControl**.
+
+<img width="192" height="602" alt="image" src="https://github.com/user-attachments/assets/e9432812-becd-4d6f-a079-75b01f1298e8" />
+
+Aegurate de guardar los archivos del cliente aquí:
+
+<img width="384" height="179" alt="image" src="https://github.com/user-attachments/assets/651e7eda-0d4b-4616-b10d-59eb77e80d45" />
 
 ## Configuración del servidor open stage control
 
